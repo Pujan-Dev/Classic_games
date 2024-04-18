@@ -1,9 +1,11 @@
 #include "games/pacman.c"
-#include "games/tictactoe.c"
+
 #include <stdio.h>
 #include <stdlib.h>
 
 // Function prototypes
+void pacman();
+void tictactoe();
 void hangman();
 void wordel();
 
