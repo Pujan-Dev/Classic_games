@@ -14,9 +14,9 @@ Experience the nostalgia of the classic arcade game Pacman! Navigate through a m
 
 Challenge a friend to a game of Tic Tac Toe! Take turns marking spaces on a 3x3 grid, aiming to create a line of three of your symbols in a row, column, or diagonal. Will you emerge victorious, or will it end in a draw?
 
-### 3. Hangman 🔡
+### 3. Snake 🐍
 
-Test your vocabulary with Hangman! Guess letters to reveal the hidden word before you run out of attempts. But be careful - every wrong guess brings you one step closer to being hanged!
+Test your reflexes with Snake! Control the snake as it slithers around the screen, eating food to grow longer. But be careful not to run into the walls or yourself, or it's game over!
 
 ### 4. Wordal 📚
 
