@@ -3,8 +3,44 @@
 #include<conio.h>
 #include<windows.h>
 
+// Define colors
+#define COLOR_GREEN "\x1b[32m"
+#define COLOR_RED "\x1b[31m"
+#define COLOR_YELLOW "\x1b[33m"
+#define COLOR_RESET "\x1b[0m"
+
 int height = 20, width = 20, x, y, fruitx, fruity, flag, gameend, score;
 int tailx[100], taily[100], piece = 0;
+
+// Function to save score to file
+void saveScore(char *username, int score) {
+    FILE *file = fopen("scores_snake", "a");
+    if (file != NULL) {
+        fprintf(file, "%s %d\n", username, score);
+        fclose(file);
+    }
+}
+
+// Function to update score if username exists, or save if new user
+void updateOrSaveScore(char *username, int score) {
+    FILE *file = fopen("scores_snake", "r+");
+    if (file != NULL) {
+        char name[100];
+        int oldScore;
+        while (fscanf(file, "%s %d", name, &oldScore) != EOF) {
+            if (strcmp(username, name) == 0) {
+                if (score > oldScore) {
+                    fseek(file, -strlen(name) - 2, SEEK_CUR);
+                    fprintf(file, "%s %d\n", username, score);
+                }
+                fclose(file);
+                return;
+            }
+        }
+        fclose(file);
+    }
+    saveScore(username, score);
+}
 
 void makelogic() {
     int i;
@@ -39,16 +75,18 @@ void makelogic() {
         gameend = 1;
     }
     if (x == fruitx && y == fruity) {
-        fruitx = rand() % 20;
-        fruity = rand() % 20;
         score += 10;
         piece++;
+        // Generate new fruit coordinates
+        fruitx = rand() % (height - 1) + 1; // Exclude the border
+        fruity = rand() % (width - 1) + 1; // Exclude the border
     }
 }
 
 void input() {
     if (kbhit()) {
-        switch (getch()) {
+        char ch = getch();
+        switch (ch) {
             case 'w':
                 flag = 1;
                 break;
@@ -60,6 +98,9 @@ void input() {
                 break;
             case 'd':
                 flag = 4;
+                break;
+            case 'q':
+                gameend = 1; // Quit the game if 'q' is pressed
                 break;
         }
     }
@@ -81,48 +122,42 @@ void draw() {
     for (i = 0; i <= height; i++) {
         for (j = 0; j <= width; j++) {
             if (i == 0 || i == height || j == 0 || j == width) {
-                printf("*");
+                printf(COLOR_GREEN "* " COLOR_RESET);
             } else {
                 if (i == x && j == y) {
-                    printf("0");
+                    printf(COLOR_RED "0 " COLOR_RESET);
                 } else if (i == fruitx && j == fruity) {
-                    printf("@");
+                    printf(COLOR_YELLOW "@ " COLOR_RESET);
                 } else {
                     ch = 0;
                     for (k = 0; k < piece; k++) {
                         if (i == tailx[k] && j == taily[k]) {
-                            printf("0");
+                            printf(COLOR_RED "0 " COLOR_RESET);
                             ch = 1;
                         }
                     }
                     if (ch == 0)
-                        printf(" ");
+                        printf("  ");
                 }
             }
         }
         printf("\n");
     }
-    printf("your score is \t %d", score);
+    printf("Your score is: %d\n", score);
 }
 
-int main() {
+int snake() {
+    char username[100];
+    printf("Enter your username: ");
+    scanf("%s", username);
     setup();
     while (!gameend) {
         input();
         draw();
         makelogic();
-        // Introducing  a delay here
-        usleep(1000); // 1000 milliseconds
+        // Introducing a delay here
+        Sleep(100); // 100 milliseconds
     }
+    updateOrSaveScore(username, score); // Save or update score
     return 0;
 }
-
-         
-
-
-
-
-
-
-
-
