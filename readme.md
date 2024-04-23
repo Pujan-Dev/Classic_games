@@ -38,7 +38,7 @@ Enjoy the timeless fun of classic games, brought to you by the dedicated team of
 ### Contributers / Team members:
 Meet the team who brought the Classic Games project to life:
 - [Pujan-Dev](https://github.com/Pujan-Dev): Developer and Creator of Pacman ⭐️ 
-- [samridheeghimire](https://github.com/samridheeghimire):Developer and Creater of Toc Tac Toe ⭐️ 
+- [samridheeghimire](https://github.com/samridheeghimire):Developer and Creater of Toc Tac Toe ⭐️
 -[Sujal Karki](https://github.com/sujalkarkii):Developer and Creater of Snake game ⭐️ 
 -
 
