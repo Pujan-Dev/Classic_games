@@ -1,5 +1,6 @@
 #include "games/pacman.c"
 #include "games/tictactoe.c"
+#include "games/snake.c"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +16,7 @@ int main()
     printf("Welcome to the Game Center!\n");
     printf("1. Pacman\n");
     printf("2. Tic Tac Toe\n");
-    printf("3. Hangman\n");
+    printf("3. Snake\n");
     printf("4. Wordel\n");
     printf("Please enter the number of the game you want to play: ");
     scanf("%d", &choice);
@@ -32,7 +33,7 @@ int main()
         tictactoe();
         break;
     case 3:
-        hangman();
+        snake();
         break;
     case 4:
         wordel();
@@ -43,14 +44,6 @@ int main()
     }
 
     return 0;
-}
-
-
-
-void hangman()
-{
-    // Implementation of Hangman game
-    printf("Hangman game is under development.\n");
 }
 
 void wordel()
