@@ -18,7 +18,7 @@ Challenge a friend to a game of Tic Tac Toe! Take turns marking spaces on a 3x3 
 
 Test your reflexes with Snake! Control the snake as it slithers around the screen, eating food to grow longer. But be careful not to run into the walls or yourself, or it's game over!
 
-### 4. Wordal 📚
+### 4. Wordle 📚
 
 Unleash your creativity with Wordal! Construct words from a jumble of letters, competing against the clock to find as many words as possible. How many can you discover before time runs out?
 
@@ -40,6 +40,6 @@ Meet the team who brought the Classic Games project to life:
 - [Pujan-Dev](https://github.com/Pujan-Dev): Developer and Creator of Pacman ⭐️ 
 - [samridheeghimire](https://github.com/samridheeghimire):Developer and Creater of Toc Tac Toe ⭐️
 - [Sujal Karki](https://github.com/sujalkarkii):Developer and Creater of Snake game ⭐️ 
-- [Prasamsha Adhikari](https://github.com/PrasamshaAdhikari) ⭐️
+- [Prasamsha Adhikari](https://github.com/PrasamshaAdhikari):Developer and Creater of Wordle ⭐️
 
 ### Let's play! 🕹️
