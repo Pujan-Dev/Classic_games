@@ -3,10 +3,8 @@
 #include "games/snake.c"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "games/wordle.c"
 // Function prototypes
-void hangman();
-void wordel();
 
 int main()
 {
@@ -17,7 +15,7 @@ int main()
     printf("1. Pacman\n");
     printf("2. Tic Tac Toe\n");
     printf("3. Snake\n");
-    printf("4. Wordel\n");
+    printf("4. Wordle\n");
     printf("Please enter the number of the game you want to play: ");
     scanf("%d", &choice);
 
@@ -36,7 +34,7 @@ int main()
         snake();
         break;
     case 4:
-        wordel();
+        wordle();
         break;
     default:
         printf("Invalid choice. Please enter a number between 1 and 4.\n");
@@ -46,8 +44,3 @@ int main()
     return 0;
 }
 
-void wordel()
-{
-    // Implementation of Wordel game
-    printf("Wordel game is under development.\n");
-}
